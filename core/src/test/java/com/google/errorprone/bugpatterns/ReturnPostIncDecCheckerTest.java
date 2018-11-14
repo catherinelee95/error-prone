@@ -21,7 +21,7 @@ public class ReturnPostIncDecCheckerTest {
 
   @Test
   public void returnIncrementCheckerPositiveCases() {
-    compilationHelper.addSourceFile("ReturnIncrementPositiveCases.java").doTest();
+    compilationHelper.addSourceFile("ReturnPostIncDecCheckerPositiveCases.java").doTest();
   }
 
 /*  @Test

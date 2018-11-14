@@ -4,10 +4,11 @@ public class ReturnPostIncDecCheckerPositiveCases {
 	
 	  // BUG: Diagnostic contains: Do not return increment.
 	  public int returnsNull(int z) {
-		int x = 1;	
+		int x = 1;
+		double a = 1.0;
 		int y = 2;
 		if(z == 3) {
-		    return z - y;
+		    return (int)((double)a++);
 		} else {
 			return x++;	
 		}
