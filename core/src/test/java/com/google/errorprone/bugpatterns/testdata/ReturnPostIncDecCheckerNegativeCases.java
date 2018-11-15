@@ -9,16 +9,20 @@ public class ReturnPostIncDecCheckerNegativeCases {
 	public int returnsPreDec(int a) {
 		return --a;
 	}
+	
+	public String returnPostIncString() {
+		return "x++";
+	}
 
-	public int sometimesReturnsPostIncDec(int a) {
+	public int sometimesReturnsPreIncDec(int a) {
 		int b = 0;
 		int c = 5;
 		if (a == 10) {
 			return a;
 		} else if (a > 10) {
-			return b;
+			return --b;
 		} else {
-			return c;
+			return ++c;
 		}
 	}
 }
