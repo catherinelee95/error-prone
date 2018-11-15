@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 
-/** Unit tests for {@link ReturnIncrementChecker}. */
+/** Unit tests for {@link ReturnPostIncDecChecker}. */
 @RunWith(JUnit4.class)
 public class ReturnPostIncDecCheckerTest {
 
@@ -24,8 +24,8 @@ public class ReturnPostIncDecCheckerTest {
     compilationHelper.addSourceFile("ReturnPostIncDecCheckerPositiveCases.java").doTest();
   }
 
-/*  @Test
+  @Test
   public void returnIncrementCheckerNegativeCases() {
-    //compilationHelper.addSourceFile("DoNotReturnNullNegativeCases.java").doTest();
-  }*/
+    compilationHelper.addSourceFile("ReturnPostIncDecCheckerNegativeCases.java").doTest();
+  }
 }
