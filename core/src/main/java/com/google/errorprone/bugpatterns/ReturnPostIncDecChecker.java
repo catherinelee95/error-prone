@@ -39,14 +39,13 @@ public class ReturnPostIncDecChecker extends BugChecker implements MethodTreeMat
 
 	@Override
 	public Description matchMethod(MethodTree tree, VisitorState state) {
-		if (!(((PrimitiveTypeTree) tree.getReturnType()).getPrimitiveTypeKind() == TypeKind.INT)) {
-			return Description.NO_MATCH;
+		if (tree.getReturnType() instanceof PrimitiveTypeTree
+				&& (((PrimitiveTypeTree) tree.getReturnType()).getPrimitiveTypeKind() == TypeKind.INT)
+				&& CONTAINS_RETURN_POST_INC_DEC.matches(tree.getBody(), state)) {
+			return describeMatch(tree);
 		}
-		if (!CONTAINS_RETURN_POST_INC_DEC.matches(tree.getBody(), state)) {
-			return Description.NO_MATCH;
-		}
-
-		return describeMatch(tree);
+		
+		return Description.NO_MATCH;
 	}
 
 	/**
