@@ -9,6 +9,10 @@ public class ReturnPostIncDecCheckerNegativeCases {
 	public int returnsPreDec(int a) {
 		return --a;
 	}
+		
+	public double returnsPreDoubleInc(double a) {
+		return ++a;
+	}
 	
 	public String returnPostIncString() {
 		return "x++";

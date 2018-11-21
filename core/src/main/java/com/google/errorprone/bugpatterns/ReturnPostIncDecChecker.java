@@ -28,7 +28,7 @@ import com.sun.source.tree.UnaryTree;
  */
 @BugPattern(
   name = "DoNotReturnIntIncrementDecrement",
-  summary = "Do not return int post increment or decrement.",
+  summary = "Do not return post increment or decrement.",
   category = JDK,
   severity = ERROR,
   tags = StandardTags.LIKELY_ERROR)
@@ -40,7 +40,12 @@ public class ReturnPostIncDecChecker extends BugChecker implements MethodTreeMat
 	@Override
 	public Description matchMethod(MethodTree tree, VisitorState state) {
 		if (tree.getReturnType() instanceof PrimitiveTypeTree
-				&& (((PrimitiveTypeTree) tree.getReturnType()).getPrimitiveTypeKind() == TypeKind.INT)
+				&& (((PrimitiveTypeTree) tree.getReturnType()).getPrimitiveTypeKind() == TypeKind.INT
+						|| ((PrimitiveTypeTree) tree.getReturnType()).getPrimitiveTypeKind() == TypeKind.DOUBLE 
+						|| ((PrimitiveTypeTree) tree.getReturnType()).getPrimitiveTypeKind() == TypeKind.FLOAT
+						|| ((PrimitiveTypeTree) tree.getReturnType()).getPrimitiveTypeKind() == TypeKind.LONG
+						|| ((PrimitiveTypeTree) tree.getReturnType()).getPrimitiveTypeKind() == TypeKind.BYTE
+						|| ((PrimitiveTypeTree) tree.getReturnType()).getPrimitiveTypeKind() == TypeKind.SHORT)
 				&& CONTAINS_RETURN_POST_INC_DEC.matches(tree.getBody(), state)) {
 			return describeMatch(tree);
 		}
