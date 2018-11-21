@@ -73,6 +73,7 @@ import com.google.errorprone.bugpatterns.ConstructorLeaksThis;
 import com.google.errorprone.bugpatterns.DateFormatConstant;
 import com.google.errorprone.bugpatterns.DeadException;
 import com.google.errorprone.bugpatterns.DeadThread;
+import com.google.errorprone.bugpatterns.DeduplicateConstants;
 import com.google.errorprone.bugpatterns.DefaultCharset;
 import com.google.errorprone.bugpatterns.DepAnn;
 import com.google.errorprone.bugpatterns.DivZero;
@@ -190,6 +191,7 @@ import com.google.errorprone.bugpatterns.OperatorPrecedence;
 import com.google.errorprone.bugpatterns.OptionalEquality;
 import com.google.errorprone.bugpatterns.OptionalNotPresent;
 import com.google.errorprone.bugpatterns.OrphanedFormatString;
+import com.google.errorprone.bugpatterns.OutlineNone;
 import com.google.errorprone.bugpatterns.OverrideThrowableToString;
 import com.google.errorprone.bugpatterns.Overrides;
 import com.google.errorprone.bugpatterns.PackageInfo;
@@ -372,6 +374,7 @@ import com.google.errorprone.bugpatterns.time.JodaToSelf;
 import com.google.errorprone.bugpatterns.time.JodaWithDurationAddedLong;
 import com.google.errorprone.bugpatterns.time.PeriodFrom;
 import com.google.errorprone.bugpatterns.time.PeriodGetTemporalUnit;
+import com.google.errorprone.bugpatterns.time.PeriodTimeMath;
 import com.google.errorprone.bugpatterns.time.ProtoDurationGetSecondsGetNano;
 import com.google.errorprone.bugpatterns.time.ProtoTimestampGetSecondsGetNano;
 import com.google.errorprone.bugpatterns.time.TemporalAccessorGetChronoField;
@@ -510,6 +513,7 @@ public class BuiltInCheckerSuppliers {
           PackageInfo.class,
           ParcelableCreator.class,
           PeriodFrom.class,
+          PeriodTimeMath.class,
           PeriodGetTemporalUnit.class,
           PreconditionsCheckNotNull.class,
           PreconditionsCheckNotNullPrimitive.class,
@@ -644,6 +648,7 @@ public class BuiltInCheckerSuppliers {
           OperatorPrecedence.class,
           OptionalNotPresent.class,
           OrphanedFormatString.class,
+          OutlineNone.class,
           Overrides.class,
           OverridesGuiceInjectableMethod.class,
           OverrideThrowableToString.class,
@@ -704,6 +709,7 @@ public class BuiltInCheckerSuppliers {
           ConstantField.class,
           ConstructorInvokesOverridable.class,
           ConstructorLeaksThis.class,
+          DeduplicateConstants.class,
           DepAnn.class,
           DivZero.class,
           EmptyIfStatement.class,
